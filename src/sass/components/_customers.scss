@@ -1,0 +1,128 @@
+.customers {
+  margin: 0 auto;
+  padding: 60px 0;
+
+  height: 100%;
+  background-image: url(../images/customers/customers-background-mob_1x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (min-width: 321px) {
+    background-image: url(../images/customers/customers-background-mob_1x.png);
+  }
+  @include breakpoint(mobile-max) {
+    max-width: 480;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 60px 0 120px 0;
+    width: 768px;
+    background-image: url(../images/customers/customers-background-tab_1x.png);
+  }
+
+  @include breakpoint(desktop) {
+    padding: 100px 0 200px 0;
+    width: 1280px;
+    background-image: url(../images/customers/customers-background-desk_1x.png);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    font-size: 14px;
+    line-height: 1.14;
+
+    @include breakpoint(tablet) {
+      font-size: 16px;
+      line-height: 1.19;
+    }
+  }
+
+  &__list {
+    @include breakpoint(tablet) {
+      display: flex;
+      gap: 32px;
+    }
+
+    @include breakpoint(desktop) {
+      gap: 139;
+    }
+  }
+
+  &__item {
+    padding: 12px 8px 4px 8px;
+    background-color: getColor('secondary-bg-color');
+
+    border-radius: 0 30px 30px 30px;
+
+    @include breakpoint(tablet-only) {
+      padding: 12px;
+
+      flex-basis: calc((100% - $indent * ($items - 1)) / $items);
+    }
+
+    @include breakpoint(desktop) {
+      padding: 14px;
+
+      width: 501px;
+    }
+
+    &:first-child {
+      @include breakpoint(mobile-max) {
+        margin-bottom: 28px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 21px;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 44px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.19;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 40px;
+
+      font-size: 18px;
+      line-height: 1.17;
+    }
+  }
+
+  &__wrapper {
+    display: inline-flex;
+
+    border-right: 1px solid getColor('border-color');
+  }
+
+  &__user-wrapper {
+    margin-left: 18px;
+    padding: 4px 16px 4px 0;
+  }
+
+  &__name {
+    margin-bottom: 2px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__position {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
